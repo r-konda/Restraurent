@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <script>
+//Here We Are Write The Function for Radio Butttons To Select The Menus
+	function checkButton() {
+
+		if (document.getElementById('menu1').checked == true) {
+			 location.href = 'morning.html';
+		} else if (document.getElementById('menu2').checked == true) {
+			 document.write("HI");
+		} else if (document.getElementById('menu3').checked == true) {
+			 location.href = 'dinnermenu.jsp';
+		} else {
+			document.write("Something wrong");
+			
+		}
+	}
+</script> -->
+<title>Home Page</title>
+</head>
+<body>
+<form action="/checkButtons" method="post">
+ <h3 style="color: Tomato">Choose Below Menu List</h3>
+	<input type="radio" id="menu1" name="one" value="MorningMenu" />Morning
+	Menu
+	<br />
+	<input type="radio" id="menu2" name="one" value="LunchMenu" />Lunch
+	Menu
+	<br />
+	<input type="radio" id="menu3" name="one" value="DinnerMenu" />Dinner
+	Menu
+	<br />
+	<button type="submit" value="Submit" >Submit</button>
+	
+	</form>
+</body>
+</html>

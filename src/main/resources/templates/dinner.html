@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dinner Menu Page</title>
+</head>
+<body>
+<form action="/calculationss">
+<h3 style="color: Tomato">Dinner Menu List</h3>
+	<table border="1" width="30%" height="30%">
+		
+			<tr>
+			   <th><font  color='Yellow'>Id</font></th>
+				<th><font color='Green'>Name</font></th>
+				<th><font color='Red'>Price</font></th>
+				<th><font color='Pink'>Select</font></th>
+			</tr>
+			
+		<tbody>
+			<tr th:each="dinnerMenu : ${dinnerList}">
+				<td th:text="${dinnerMenu.id}"></td>
+				<td th:text="${dinnerMenu.name}"></td>
+				<td th:text="${dinnerMenu.price}"></td>
+             <td ><input type="checkbox" name="selected2" th:value="${dinnerMenu.id}"></td>
+
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" value="Submit"></input></td>
+			   <td colspan="3"><input type="reset" value="Reset"></input></td>
+				
+			</tr>
+		</tbody>
+	</table>
+</form>
+</body>
+</html>

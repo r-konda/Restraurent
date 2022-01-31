@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3 style="color: Tomato">Calculation Part: </h3>
+<h3 style="color: Tomato">Total Order:</h3>
+	<table border="1" width="30%" height="30%">
+	<tr>
+	<th> Item Name </th>
+	<th> Item Price </th>
+	</tr>
+	<tbody>
+	<tr th:each="dinnerMenu : ${orderList.menu}">
+				<td th:text="${dinnerMenu.name}"></td>
+				<td th:text="${dinnerMenu.price}"></td>
+	</tr>
+	</tbody>
+	<tr>
+		<td> Total: </td>
+		<td th:text="${orderList.total}"> </td>
+	</tr>
+	<tr>
+		<td> After Applying Discount:: </td>
+		<td th:text="${orderList.applicable == 'YES'} ? ${orderList.discTotal} : 'NOT APPLICABLE'"> </td>
+	</tr>
+	</table>
+	 
+	  <h3 style="color: Tomato">Discount Applicable Customers:</h3>
+	 <table border="1" width="30%" height="30%">
+	 <tr>
+	    <th> Customer ID: </th>
+	 	<th> Customer Name: </th>
+	 	<th> Customer Phone No: </th>
+	 </tr>
+	 <tbody>
+	 	<tr th:each="dinnerMenu : ${DiscountAppliedCustomerList}">
+	 	       <td  th:text="${dinnerMenu.id}"></td>
+				<td th:text="${dinnerMenu.name}"></td>
+				<td th:text="${dinnerMenu.mobile}"></td>
+		</tr>
+	 </tbody>
+	 </table>
+	<p><a th:href="@{home}">Back Button For Home Page</a></p>
+	 
+</body>
+</html>
